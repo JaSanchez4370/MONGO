@@ -1,0 +1,467 @@
+use instituto
+
+db 
+
+db.createCollection("profesores")
+db.createCollection("estudiantes")
+db.createCollection("cursos")
+db.createCollection("profesorescurso")
+db.createCollection("estudiantescurso")
+
+db.profesores.insertMany([
+    {
+        nombre:'Javier Alejandro',
+        apellido:'Sanchez Salamanca',
+        correo:'jasanchez4370@misena.edu.co',
+        documento:'1000320734'
+    },
+    {
+        nombre:'Sebastian',
+        apellido:'Sanchez Salamanca',
+        correo:'ssanchez2311@misena.edu.co',
+        documento:'1015397070'
+
+    },
+    {
+        nombre:'Santiago',
+        apellido:'Sanchez Salamanca',
+        correo:'ssanchez2903@misena.edu.co',
+        documento:'1011093170'
+    },
+    {
+        nombre:'Sebastian Alejandro',
+        apellido:'Sierra Patiño',
+        correo:'sasierra8600@misena.edu.co',
+        documento:'1000160068'
+    },
+    {
+        nombre:'Santiago Andres',
+        apellido:'Pulido Rios',
+        correo:'spulido2607@misena.edu.co',
+        documento:'1000112234'
+    }
+])
+
+
+db.estudiantes.insertMany([
+    {
+        nombre:'Andres',
+        apellido:'Acosta',
+        correo:'aacosta@hotmail.com',
+        documento:'1000320232'
+    },
+    {
+        nombre:'Nicoll',
+        apellido:'Aguirre',
+        correo:'naguirre@hotmail.com',
+        documento:'1000345679'
+
+    },
+    {
+        nombre:'Arlex',
+        apellido:'Ariza',
+        correo:'aariza@hotmail.com',
+        documento:'1001342222'
+    },
+    {
+        nombre:'Laura',
+        apellido:'Avellaneda',
+        correo:'aavellaneda@hotmail.com',
+        documento:'1010987678'
+    },
+    {
+        nombre:'Sara',
+        apellido:'Becerra',
+        correo:'sbecerra@hotmail.com',
+        documento:'1000000987'
+    },
+    {
+        nombre:'Juan',
+        apellido:'Bohorquez',
+        correo:'jbohorquez@hotmail.com',
+        documento:'9523056'
+    },
+    {
+        nombre:'Duffay',
+        apellido:'Calderon',
+        correo:'scalderon@hotmail.com',
+        documento:'52355962'
+
+    },
+    {
+        nombre:'Luisa',
+        apellido:'Camacho',
+        correo:'lcamacho@hotmail.com',
+        documento:'79879429'
+    },
+    {
+        nombre:'Jaider',
+        apellido:'Camacho',
+        correo:'jcamacho@hotmail.com',
+        documento:'80191480'
+    },
+    {
+        nombre:'Jony',
+        apellido:'Caro',
+        correo:'jcaro@hotmail.com',
+        documento:'51654494'
+    },
+    {
+        nombre:'Brayan',
+        apellido:'Leiton',
+        correo:'bleiton@hotmail.com',
+        documento:'1003435678'
+    },
+    {
+        nombre:'Brayan',
+        apellido:'Castro',
+        correo:'bcastro@hotmail.com',
+        documento:'1000009998'
+
+    },
+    {
+        nombre:'Juan',
+        apellido:'Castro',
+        correo:'jcastro@hotmail.com',
+        documento:'1000200100'
+    },
+    {
+        nombre:'Laura',
+        apellido:'Castro',
+        correo:'lcastro@hotmail.com',
+        documento:'1000123456'
+    },
+    {
+        nombre:'Daniel',
+        apellido:'Fracica',
+        correo:'dfracica@hotmail.com',
+        documento:'1015233333'
+    },
+    {
+        nombre:'Fabian',
+        apellido:'Macias',
+        correo:'fmacias@hotmail.com',
+        documento:'1022345678'
+    },
+    {
+        nombre:'Yeison',
+        apellido:'Madrigal',
+        correo:'ymadrigal@hotmail.com',
+        documento:'1000100320'
+
+    },
+    {
+        nombre:'Camila',
+        apellido:'Moreno',
+        correo:'cmoreno@hotmail.com',
+        documento:'1000324567'
+    },
+    {
+        nombre:'Juan',
+        apellido:'Moreno',
+        correo:'jmoreno@hotmail.com',
+        documento:'1000444666'
+    },
+    {
+        nombre:'Edwin',
+        apellido:'Muñoz',
+        correo:'emuñoz@hotmail.com',
+        documento:'1006678987'
+    },
+])
+
+db.cursos.insertMany([
+    {
+        nombre:'Calculo diferencial',
+        creditos:'4'
+    },
+    {
+        nombre:'Programacion basica',
+        creditos:'3'
+    },
+    {
+        nombre:'Logica',
+        creditos:'3'
+    },
+    {
+        nombre:'Seminario de ingenieria',
+        creditos:'1'
+    },
+    {
+        nombre:'Fisica I: Mecanica newtoniana',
+        creditos:'3'
+    },
+    {
+        nombre:'Programacion orientada a objetos',
+        creditos:'3'
+    },
+    {
+        nombre:'Calculo integral',
+        creditos:'3'
+    },
+    {
+        nombre:'Algebra Lineal',
+        creditos:'3'
+    }
+])
+
+db.profesorescurso.insertMany([
+    {
+        idprofesor: ObjectId("5fce965ebea59fe4bbfe253e"),
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe2557")
+    },
+    {
+        idprofesor: ObjectId("5fce965ebea59fe4bbfe253f"),
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe2558")
+    },
+    {
+        idprofesor: ObjectId("5fce965ebea59fe4bbfe2540"),
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe2559")
+    },
+    {
+        idprofesor: ObjectId("5fce965ebea59fe4bbfe2541"),
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255a")
+    },
+    {
+        idprofesor: ObjectId("5fce965ebea59fe4bbfe2542"),
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255b")
+    },
+    {
+        idprofesor: ObjectId("5fce965ebea59fe4bbfe253e"),
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255c")
+    },
+    {
+        idprofesor: ObjectId("5fce965ebea59fe4bbfe253f"),
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255d")
+    },
+    {
+        idprofesor: ObjectId("5fce965ebea59fe4bbfe2540"),
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255e")
+    } 
+])
+
+db.estudiantescurso.insertMany([
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe2557"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2543")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe2558"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2544")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe2559"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2545")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255a"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2546")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255b"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2547")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255c"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2548")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255d"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2549")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255e"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe254a")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe2557"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe254b")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe2558"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe254c")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe2559"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe254d")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255a"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe254e")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255b"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe254f")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255c"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2550")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255d"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2551")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255e"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2552")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe2557"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2553")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe2558"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2554")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe2559"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2555")
+    },
+    {
+        idcurso: ObjectId("5fce96cdbea59fe4bbfe255a"),
+        idestudiante: ObjectId("5fce96cdbea59fe4bbfe2556")
+    }
+])
+
+//CONSULTAR TODOS LOS DOCENTES
+db.profesores.find().pretty()
+
+//CONSULTAR TODOS LOS ESTUDIANTES
+db.estudiantes.find().pretty()
+
+//CONSULTAR TODOS LOS CURSOS
+db.cursos.find().pretty()
+
+//CONSULTAR CURSOS DE UN PROFESOR
+db.profesores.aggregate([ 
+    {
+        $match:{
+            _id: ObjectId("5fce965ebea59fe4bbfe253e"),
+        }
+    },
+    {
+        $lookup:{
+            from:'profesorescurso',
+            localField:'_id',
+            foreignField:'idprofesor',
+            as:'datoscurso'
+        }
+    },
+    {
+        $unwind:'$datoscurso'
+    },
+    {
+        $lookup:{
+            from:'cursos',
+            localField:'datoscurso.idcurso',
+            foreignField:'_id',
+            as:'curso'
+        }  
+    },
+    {
+        $project: {
+            nombreprofesor:'$nombre',
+            apellidoprofesor:'$apellido',
+            documento:'$documento',
+            nombrecurso:'$curso.nombre',
+            creditos:'$curso.creditos'
+
+        }
+    }
+]).pretty()
+
+//CONSULTAR ESTUDIANTES DE UN CURSO
+
+db.cursos.aggregate([ 
+    {
+        $match:{
+            _id: ObjectId("5fce96cdbea59fe4bbfe2557"),
+        }
+    },
+    {
+        $lookup:{
+            from:'estudiantescurso',
+            localField:'_id',
+            foreignField:'idcurso',
+            as:'datosestudiante'
+        }
+    },
+    {
+        $lookup:{
+            from:'estudiantes',
+            localField:'datosestudiante.idestudiante',
+            foreignField:'_id',
+            as:'estudiante'
+        }
+    },
+        {
+            $unwind:'$estudiante'   
+        },  
+    
+    {
+        $project: {
+            curso:'$nombre',
+            creditos:'$creditos',
+            nombreestudiante:'$estudiante.nombre',
+            apellidoestudiante:'$estudiante.apellido',
+            documentoestudiante:'$estudiante.documento',
+
+        }
+    }
+
+]).pretty()
+
+//CONSULTAR CURSOS DE UN PROFESOR CON SUS ESTUDIANTES
+
+db.profesores.aggregate([ 
+    {
+        $match:{
+            _id: ObjectId("5fce965ebea59fe4bbfe253f"),
+        }
+    },
+    {
+        $lookup:{
+            from:'profesorescurso',
+            localField:'_id',
+            foreignField:'idprofesor',
+            as:'datoscurso'
+        }
+    },
+    {
+        $unwind:'$datoscurso'
+    },
+    {
+        $lookup:{
+            from:'cursos',
+            localField:'datoscurso.idcurso',
+            foreignField:'_id',
+            as:'curso'
+        }  
+    },
+    {
+        $lookup:{
+            from:'estudiantescurso',
+            localField:'curso._id',
+            foreignField:'idcurso',
+            as:'datoestudiante'
+        }  
+    },
+    {
+        $lookup:{
+            from:'estudiantes',
+            localField:'datoestudiante.idestudiante',
+            foreignField:'_id',
+            as:'estudiantes'
+        }  
+    },
+    {
+        $project: {
+            nombreprofesor:'$nombre',
+            apellidoprofesor:'$apellido',
+            documento:'$documento',
+            nombrecurso:'$curso.nombre',
+            creditos:'$curso.creditos'
+
+        }
+    }
+]).pretty()
